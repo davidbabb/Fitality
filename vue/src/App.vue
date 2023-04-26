@@ -16,16 +16,17 @@
         </div>
 
       </router-link>
-      <router-link class="ehh" v-bind:to="{ name: 'createExercise' }">
+      <router-link class="ehh" v-bind:to="{ name: 'createExercise' }" v-if="user.authorities[0].name === 'ROLE_USER'">
         <div class="control control1" data-id="create">  
           <div>
             <font-awesome-icon icon="dumbbell" class="icon"/> 
           </div>
           <div>
-            <span>Workouts</span>
+            <span>Exercises</span>
           </div>
         </div>
       </router-link>
+      <!-- create equipment button for admin to add equipment -->
       
       <router-link  class="ehh" v-bind:to="{ name: 'CreateGymClass' }" v-if="user.authorities[0].name === 'ROLE_ADMIN'">
         <div class="control control2" data-id="createclass" >

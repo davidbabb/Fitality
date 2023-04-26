@@ -38,7 +38,6 @@
       <div id="noaccount">Don't have an account?</div>
       <router-link id="register" :to="{ name: 'register' }">Sign Up</router-link>
       <button type="submit">Login</button>
-      <div id="loginOptions">Or login with</div>
     </form>
   </div>
 </template>

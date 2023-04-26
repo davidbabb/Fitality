@@ -26,12 +26,15 @@
             <img src="../img/upcomingclassimg.jpg" alt="upcoming classes">
         </router-link>
     </div>
-    <div v-if="user.authorities[0].name === 'ROLE_ADMIN'"
+    <div v-if="user.authorities[0].name === 'ROLE_ADMIN' && !workoutStarted"
          :class="{'start-workout-visible': !workoutStarted, 'end-workout-visible': workoutStarted}">
-      <router-link :to="{name:'MachineMetrics'}" tag=button class="machine-metrics">
-        Machine Metrics
+      <router-link :to="{name:'EquipmentManagement'}" tag=button class="machine-metrics">
+        Equipment Management
         <img src="../img/machinemetricsimg.jpg" alt="machine metrics">
       </router-link>
+    </div>
+    <div v-if="user.authorities[0].name === 'ROLE_USER'">
+      <Motivational/>
     </div>
   </div>
 </template>
@@ -40,6 +43,7 @@
 import { mapState } from 'vuex';
 import WorkoutService from '../services/WorkoutService';
 import AccountService from '../services/AccountService';
+import Motivational from '../components/Motivational.vue';
 
 export default {
   name: "home",
@@ -50,6 +54,9 @@ export default {
       latestWorkout: null,
       name: ""
     };
+  },
+  components: {
+    Motivational
   },
   computed: {
     ...mapState(['user'])

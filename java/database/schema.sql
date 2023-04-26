@@ -147,6 +147,18 @@ CREATE TABLE EquipmentUsageLog (
     CONSTRAINT FK_EquipmentUsageLog_equipment FOREIGN KEY (Equipment_id) REFERENCES Equipment (Equipment_id)
 );
 
+CREATE SEQUENCE seq_motivational_id
+    INCREMENT BY 1
+    START WITH 500
+    NO MAXVALUE;
+
+CREATE TABLE motivational (
+    motivational_id int NOT NULL DEFAULT nextval('seq_motivational_id'),
+    author varchar(100) NOT NULL,
+    quote varchar(1000) NOT NULL,
+    CONSTRAINT PK_motivational PRIMARY KEY (motivational_id)
+    )
+
 INSERT INTO users (username,password_hash,role) VALUES ('user','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_USER');
 INSERT INTO users (username,password_hash,role) VALUES ('admin','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_ADMIN');
 INSERT INTO users (username,password_hash,role) VALUES ('admin1','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_ADMIN');
@@ -288,6 +300,23 @@ VALUES
 (3008,    '2023-05-23', '01:00:00'),
 (3009,    '2023-05-22', '01:00:00'),
 (3010,    '2023-05-20', '01:00:00');
+
+INSERT INTO motivational (author, quote)
+	values ('Karen Lamb', 'A year from now you may wish you had started today.'),
+	('John Wooden', 'Don’t give up on your dreams, or your dreams will give up on you.'),
+	('Arnold Schwarzenegger', 'The last three or four reps is what makes the muscle grow. This area of pain divides a champion from someone who is not a champion.'),
+	('Henry David Thoreau', 'Success usually comes to those who are too busy to be looking for it.'),
+	('Samuel Johnson', 'Exercise is labor without weariness.'),
+	('Michael Jordan', 'Some people want it to happen, some wish it would happen, others make it happen.'),
+	('Michel Joan Bobak', 'All progress takes place outside the comfort zone.'),
+	('John Assaraf', 'Look in the mirror. That’s your competition.'),
+	('William Shakespeare', 'Our bodies are our gardens – our wills are our gardeners.'),
+	('Henry Ford', 'Whether you think you can, or you think you can’t, you’re right.'),
+	('Bruce Lee', 'The successful warrior is the average man, with laser-like focus.'),
+	('Pablo Picasso', 'Action is the foundational key to all success.'),
+	('Tony Robbins', 'Setting goals is the first step into turning the invisible into the visible.'),
+	('Jerry Rice', 'Today I will do what others won’t, so tomorrow I can accomplish what others can’t.'),
+	('Aristotle', 'We are what we repeatedly do. Excellence then is not an act but a habit.');
 
 END TRANSACTION ;
 COMMIT TRANSACTION;

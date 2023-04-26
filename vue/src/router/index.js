@@ -12,6 +12,7 @@ import UserExercises from "../views/UserExercises.vue";
 import UpcomingGymClassesView from "../views/UpcomingGymClassesView.vue";
 import Profile from "../views/Profile.vue";
 import MachineMetrics from "../views/MachineMetrics.vue";
+import EquipmentManagement from "../views/EquipmentManagement.vue";
 Vue.use(Router)
 
 /**
@@ -94,6 +95,11 @@ const router = new Router({
       path: "/MachineMetrics",
       name: "MachineMetrics",
       component: MachineMetrics,
+    },
+    {
+      path: "/equipmentmanagement",
+      name: "EquipmentManagement",
+      component: EquipmentManagement,
     }
 
   ]
