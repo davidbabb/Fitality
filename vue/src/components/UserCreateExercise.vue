@@ -6,12 +6,12 @@
     
     <form @submit.prevent="submitForm">
       <div class="upper-box">
-      <div class="box">
+      <!-- <div class="box">
         <label id="workout-id">Workout ID:</label>
         <select id="option1" v-model.number="exerciseInfo.workoutId" required>
           <option >{{ latestWorkout }}</option>
         </select>
-      </div>
+      </div> -->
       <div class="box">
         <label id="exercise-name">Exercise Name:</label>
         <select id="option3" v-model="exerciseInfo.exerciseName" required>
@@ -93,6 +93,7 @@ export default {
     workoutService.getWorkoutByUserId(this.userId).then((response) => {
       this.workouts = response.data;
       this.findLatest();
+      this.exerciseInfo.workoutId = this.latestWorkout;
     });
   },
 
