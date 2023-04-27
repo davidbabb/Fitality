@@ -13,15 +13,15 @@
         </select>
       </div>
       <div class="box">
-        <label id="equipment-name">Equipment Name:</label>
-        <select id="option2" v-model="exerciseInfo.equipmentName" required>
-          <option v-for="equipment in equipments" :key="equipment.equipmentId" :value="equipment.equipmentName">{{ equipment.equipmentName.toUpperCase() }}</option>
+        <label id="exercise-name">Exercise Name:</label>
+        <select id="option3" v-model="exerciseInfo.exerciseName" required>
+          <option v-on:input="getEquipmentByExercise" v-for="exercise in exercises" :key="exercise.exerciseId" :value="exercise.exerciseName">{{ exercise.exerciseName.toUpperCase() }}</option>
         </select>
       </div>
       <div class="box">
-        <label id="exercise-name">Exercise Name:</label>
-        <select id="option3" v-model="exerciseInfo.exerciseName" required>
-          <option v-for="exercise in exercises" :key="exercise.exerciseId" :value="exercise.exerciseName">{{ exercise.exerciseName.toUpperCase() }}</option>
+        <label id="equipment-name">Equipment Name:</label>
+        <select id="option2" v-model="exerciseInfo.equipmentName" required>
+          <option v-for="equipment in equipments" :key="equipment.equipmentId" :value="equipment.equipmentName">{{ equipment.equipmentName.toUpperCase() }}</option>
         </select>
       </div>
       <div class="box">
@@ -67,7 +67,7 @@ export default {
     return {
       exerciseInfo: {
         userId: this.userId,
-        workoutId: null,
+        workoutId: this.latestWorkout,
         equipmentName: "",
         exerciseName: "",
         set: null,
@@ -119,6 +119,9 @@ export default {
           this.latestWorkout = this.workouts[i].workoutId;
         }
       }
+    },
+    getEquipmentByExercise() {
+      this.exerciseInfo.equipmentName = equipmentService.getEquipmentNameByExercise(this.exerciseInfo.exerciseName)
     }
   },
 };

@@ -178,10 +178,10 @@ INSERT INTO public.exercise(
 			('biking'),
 			('jogging'),
 	        ('flying'),
-            ('Incline Bench'),
-            ('Decline Bench'),
-            ('Dumbbel Tricep'),
-	        ('Lat pulldown');
+            ('incline bench'),
+            ('decline bench'),
+            ('dumbbell press'),
+	        ('lat pulldown');
 
 INSERT INTO public.workout(
 	user_id, start_time)
@@ -216,13 +216,13 @@ INSERT INTO public.workout(
 
 INSERT INTO public.equipment(
 	equipment_name, equipment_tutorial)
-	VALUES  ('TREADMILL','www.youtube.com/watch?v=usScM1QZrQw'),
-			('LIFECYCLE BIKE','www.youtube.com/watch?v=oAqA6byN9TI'),
-			('SQUAT RACK ','www.youtube.com/watch?v=kaO7Yw1hlcM'),
-			('FLAT BENCH','www.youtube.com/watch?v=oAqA6byN9TI'),
-			('OLYMPIC PLATFORM', 'www.getswole.com'),
-            ('DUAL ADJUSTABLE PULLEY' , 'www.youtube.com/watch?v=oAqA6byN9TI'),
-            ('HAMMER STRENGTH', 'www.youtube.com/watch?v=oAqA6byN9TI');
+	VALUES  ('treadmill','www.youtube.com/watch?v=usScM1QZrQw'),
+			('lifecycle bike','www.youtube.com/watch?v=oAqA6byN9TI'),
+			('squat rack','www.youtube.com/watch?v=kaO7Yw1hlcM'),
+			('adjustable bench','www.youtube.com/watch?v=oAqA6byN9TI'),
+			('olympic platform', 'www.getswole.com'),
+            ('dual adjustable pulley' , 'www.youtube.com/watch?v=oAqA6byN9TI'),
+            ('hammer strength', 'www.youtube.com/watch?v=oAqA6byN9TI');
 
 INSERT INTO public.workout_exercise(
 	workout_id, exercise_id, weight, set, rep, duration)
@@ -242,14 +242,14 @@ INSERT INTO public.workout_exercise(
 INSERT INTO public.equipment_exercise(
 	exercise_id, equipment_id)
 	VALUES  (1001, 4004),
-			(1002, 4002),
-			(1003, 4001),
-			(1004, 4005),
-			(1005, 4003),
-            (1006, 4006),
-            (1007, 4007),
-            (1008, 4002),
-            (1009, 4001);
+			(1002, 4003),
+			(1003, 4005),
+			(1004, 4002),
+			(1005, 4001),
+            (1006, 4007),
+            (1007, 4004),
+            (1008, 4004),
+            (1009, 4004;
 
 
 INSERT INTO public.equipmentusagelog(
