@@ -97,7 +97,7 @@ const router = new Router({
       component: MachineMetrics,
     },
     {
-      path: "/equipmentmanagement",
+      path: "/EquipmentManagement",
       name: "EquipmentManagement",
       component: EquipmentManagement,
     }
