@@ -23,7 +23,7 @@
 
 <script>
 import exerciseService from "../services/ExerciseService";
-import equipmentService from "../services/EquipmentService"
+import equipmentService from "../services/EquipmentService";
 
 export default {
   name: "CreateExercise",

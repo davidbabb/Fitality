@@ -1,21 +1,18 @@
 <template>
-  <!-- <div>
-      <router-link :to="{name:'MachineMetrics'}" tag=button class="machine-metrics">
-        Equipment Usage
-        <img src="../img/machinemetricsimg.jpg" alt="machine metrics">
-      </router-link>
-    </div> -->
     <div>
       <Machine-Metrics/>
+      <Add-Equipment/>
     </div>
 </template>
 
 <script>
+import AddEquipment from '../components/AddEquipment.vue';
 import MachineMetrics from '../views/MachineMetrics.vue';
 export default {
   name: "EquipmentManagement",
   components: {
-    MachineMetrics
+    MachineMetrics,
+    AddEquipment
   }
 }
 </script>

@@ -1,5 +1,6 @@
 <template>
   <div class="home">
+    <h2>Welcome, {{ this.name }} !</h2>
     <div class="nav">
     </div>
     <div>
@@ -14,7 +15,6 @@
     </button>
 
     <div v-if="user && workoutStarted" class="end-buttons">
-      <!-- <h2>Welcome, {{ this.name }} !</h2> -->
       <div>
         <router-link :to="{name:'UserExercises', params: {userId: user.id}}" tag=button class="exercise-view-button">
         View Exercises

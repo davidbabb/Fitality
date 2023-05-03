@@ -17,5 +17,8 @@ export default {
     const num = exerciseName.indexOf(' ');
     const str = exerciseName.slice(0, num) + '%20' + exerciseName.slice(num+1, exerciseName.length);
     return axios.get(`equipments/name/${str}`);
+  },
+  addEquipment(data) {
+    return axios.post('/equipments', data);
   }
 };
