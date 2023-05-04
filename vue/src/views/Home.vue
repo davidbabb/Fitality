@@ -143,6 +143,8 @@ button{
   border: none;
   border-radius: 5px;
   color: white;
+  display: flex;
+  flex-direction: row;
   padding: 70px 30px;
   text-align: left;
   text-decoration: none;
@@ -201,7 +203,7 @@ button img {
   padding-top: 58px;
 }
 button img{
-  top:69px;
+  top:155px;
   height: 155px;
 }
 .end-workout-btn img{
@@ -218,6 +220,7 @@ button img{
 .machine-metrics{
   margin-bottom: 20px;
 }
+
 .start-workout-visible .machine-metrics img {
   top: 238px;
 }
