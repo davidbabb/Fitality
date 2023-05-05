@@ -30,7 +30,7 @@
          :class="{'start-workout-visible': !workoutStarted, 'end-workout-visible': workoutStarted}">
       <router-link :to="{name:'EquipmentManagement'}" tag=button class="machine-metrics">
         Equipment Management
-        <img src="../img/machinemetricsimg.jpg" alt="machine metrics">
+        <img src="../img/machinemetricsimg.jpg" alt="machine metrics" >
       </router-link>
     </div>
     <div v-if="user.authorities[0].name === 'ROLE_USER'">
@@ -160,8 +160,8 @@ button img {
   position: absolute;
   width: 200px;
   height: 150px;
-  top: 10px;
-  right: 10vw;
+  top: 78px;
+  right: 3vw;
   object-fit: cover;
 }
 .start-workout-btn{
@@ -173,20 +173,18 @@ button img {
 }
 
 .exercise-view-button img{
-  top: 348px;
-  
+  top: 249px;
   height: 155px;
 }
 .upcoming-gym-classes img{
-  
-  top: 179px;
+  top: 414px;
   height: 155px;
 }
 .machine-metrics img{
   height: 155px;
 }
 .start-workout-visible .machine-metrics img {
-  top: 179px;
+  top: 247px;
 }
 
 .end-workout-visible .machine-metrics img {
@@ -202,8 +200,9 @@ button img {
   padding-bottom: 0px;
   padding-top: 58px;
 }
+
 button img{
-  top:155px;
+  top:136px;
   height: 155px;
 }
 .end-workout-btn img{
@@ -222,7 +221,7 @@ button img{
 }
 
 .start-workout-visible .machine-metrics img {
-  top: 238px;
+  top: 305px;
 }
 
 .end-workout-visible .machine-metrics img {
