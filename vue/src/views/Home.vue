@@ -209,11 +209,11 @@ button img{
   height: 154px;
 }
 .exercise-view-button img{
-  top: 238px
+  top: 307px
   
 }
 .upcoming-gym-classes img{
-  top: 405px
+  top: 473px
 }
 
 .machine-metrics{

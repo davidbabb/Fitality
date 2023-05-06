@@ -14,14 +14,14 @@
       </div> -->
       <div class="box">
         <label id="exercise-name">Exercise Name:</label>
-        <select id="option3" v-model="exerciseInfo.exerciseName" required>
-          <option v-on:input="getEquipmentByExercise" v-for="exercise in exercises" :key="exercise.exerciseId" :value="exercise.exerciseName">{{ exercise.exerciseName.toUpperCase() }}</option>
+        <select @input="getEquipmentByExercise" id="option3" v-model="exerciseInfo.exerciseName" required>
+          <option v-for="exercise in exercises" :key="exercise.exerciseId" :value="exercise.exerciseName">{{ exercise.exerciseName.toUpperCase() }}</option>
         </select>
       </div>
       <div class="box">
         <label id="equipment-name">Equipment Name:</label>
         <select id="option2" v-model="exerciseInfo.equipmentName" required>
-          <option v-for="equipment in equipments" :key="equipment.equipmentId" :value="equipment.equipmentName">{{ equipment.equipmentName.toUpperCase() }}</option>
+          <option v-for="equipment in equipments" :key="equipment.equipmentId" :value="equipment.equipmentName">{{ equipment.equipmentName.toUpperCase() /*this.exerciseInfo.equipmentName*/ }}</option>
         </select>
       </div>
       <div class="box">
