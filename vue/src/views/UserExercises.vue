@@ -1,19 +1,16 @@
 <template>
   <div>
-    <UserExercise :userId="parsedUserId"/>
     <UserCreateExercise :userId="parsedUserId" @exercise-created="refreshExercises"/>
   </div>
 </template>
 
 <script>
-import UserExercise from '../components/UserExercise.vue';
 import UserCreateExercise from '../components/UserCreateExercise.vue';
 
 export default {
   name: "UserExercises",
   components: {
-    UserExercise,
-    UserCreateExercise,
+    UserCreateExercise
   },
   props: {
     userId: {

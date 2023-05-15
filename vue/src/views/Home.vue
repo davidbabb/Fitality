@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <h2>Welcome, {{ this.name }} !</h2>
+    <h2>Welcome, {{ this.name }}!</h2>
     <div class="nav">
     </div>
     <div>
@@ -14,17 +14,19 @@
       <img src="../img/endworkoutimg.jpg" alt="end image">
     </button>
 
-    <div v-if="user && workoutStarted" class="end-buttons">
-      <div>
+    <div v-if="user" class="end-buttons">
+      <div v-if="workoutStarted">
         <router-link :to="{name:'UserExercises', params: {userId: user.id}}" tag=button class="exercise-view-button">
-        View Exercises
+        Add Exercises
         <img src="../img/viewexercisesimg.jpg" alt="view exercises">
       </router-link>
       </div>
+      <div v-if="!workoutStarted">
         <router-link :to="{name:'UpcomingGymClassesView'}" tag=button class="upcoming-gym-classes">
             Upcoming Classes
             <img src="../img/upcomingclassimg.jpg" alt="upcoming classes">
         </router-link>
+      </div>
     </div>
     <div v-if="user.authorities[0].name === 'ROLE_ADMIN' && !workoutStarted"
          :class="{'start-workout-visible': !workoutStarted, 'end-workout-visible': workoutStarted}">
@@ -33,7 +35,7 @@
         <img src="../img/machinemetricsimg.jpg" alt="machine metrics" >
       </router-link>
     </div>
-    <div v-if="user.authorities[0].name === 'ROLE_USER'">
+    <div  v-if="!workoutStarted">
       <Motivational/>
     </div>
   </div>
@@ -173,11 +175,11 @@ button img {
 }
 
 .exercise-view-button img{
-  top: 249px;
+  top: 246px;
   height: 155px;
 }
 .upcoming-gym-classes img{
-  top: 414px;
+  top: 245px;
   height: 155px;
 }
 .machine-metrics img{
@@ -193,6 +195,7 @@ button img {
 .end-workout-btn img{
   height: 158px;
   width: 250px;
+  top: 77px;
 }
 /* make a media with min width of 768 */
 @media only screen and (min-width: 768px){

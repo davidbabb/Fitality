@@ -1,7 +1,7 @@
 <template>
   <div class="update">
     <div class="update-title">
-      <h3>Your Exercises</h3>
+      <h3>YOUR EXERCISES</h3>
     </div>
     <div class="form">
       <form @submit.prevent="submitForm" >

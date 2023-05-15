@@ -1,5 +1,6 @@
 <template>
   <div class="exercise">
+    <user-exercise/>
     <div class="title">
         <h3>CREATE EXERCISE</h3>
       </div>
@@ -24,8 +25,10 @@
 <script>
 import exerciseService from "../services/ExerciseService";
 import equipmentService from "../services/EquipmentService";
+import UserExercise from '../components/UserExercise.vue';
 
 export default {
+  components: { UserExercise },
   name: "CreateExercise",
   data() {
     return {
